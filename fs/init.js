@@ -7,7 +7,9 @@ let pin = Cfg.get('app.pin');
 let dht = DHT.create(pin, Cfg.get('app.sensor'));
 
 Timer.set(1000, true, function() {
-	  print('Temperature:', dht.getTemp());
+	  let tc = dht.getTemp();
+	  let tf = tc * 9 / 5 + 32;
+	  print('Temperature:', tc, 'c    ', tf, 'f');
 	}, null);
 
 Timer.set(1000, true, function() {
