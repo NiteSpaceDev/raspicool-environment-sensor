@@ -9,11 +9,8 @@ let dht = DHT.create(pin, Cfg.get('app.sensor'));
 Timer.set(1000, true, function() {
 	  let tc = dht.getTemp();
 	  let tf = tc * 9 / 5 + 32;
-	  print('Temperature:', tc, 'c    ', tf, 'f');
-	}, null);
-
-Timer.set(1000, true, function() {
-	  print('Humidity:', dht.getHumidity());
+	  let hum = dht.getHumidity();
+	  print('Temperature:', tc, 'c    ', tf, 'f     -    Rel Humidity: ', hum, '%');
 	}, null);
 
 RPC.addHandler('Temp.Read', function(args) {
