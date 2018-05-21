@@ -4,7 +4,7 @@ load('api_dht.js');
 load('api_timer.js');
 
 let pin = Cfg.get('app.pin');
-let dht = DHT.create(pin, DHT.DHT22);
+let dht = DHT.create(pin, Cfg.get('app.sensor'));
 
 Timer.set(1000, true, function() {
 	  print('Temperature:', dht.getTemp());
