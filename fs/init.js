@@ -10,6 +10,14 @@ Timer.set(1000, true, function() {
 	  print('Temperature:', dht.getTemp());
 	}, null);
 
+Timer.set(1000, true, function() {
+	  print('Humidity:', dht.getHumidity());
+	}, null);
+
 RPC.addHandler('Temp.Read', function(args) {
 	  return { value: dht.getTemp() };
+	});
+
+RPC.addHandler('Humid.Read', function(args) {
+	  return { value: dht.getHumidity() };
 	});

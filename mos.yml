@@ -27,7 +27,7 @@ filesystem:
 
 config_schema:
   - ["app", "o", {title: "Feather Environment Sensor"}]
-  - ["app.pin", "i", 16, {title: "GPIO pin that DHT22 is connected to"}]
+  - ["app.pin", "i", 5, {title: "GPIO pin that DHT22 is connected to"}]
 
 # List of libraries used by this app, in order of initialisation
 libs:
