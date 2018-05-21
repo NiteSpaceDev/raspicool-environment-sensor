@@ -1,14 +1,16 @@
-# A blank Mongoose OS app
+# A Feather Huzzah based AWS IOT temp sensor
 
 ## Overview
 
-This is an empty app, serves as a skeleton for building Mongoose OS
-apps from scratch.
+This will eventually be an Adafruit Feather based environmental sensor
 
 ## How to install this app
 
-- Install and start [mos tool](https://mongoose-os.com/software.html)
-- Switch to the Project page, find and import this app, build and flash it:
+- mos build
+- mos flash
+
+
+# Built for (MongooseOS)[https://mongoose-os.com]
 
 <p align="center">
   <img src="https://mongoose-os.com/images/app1.gif" width="75%">
