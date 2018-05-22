@@ -27,8 +27,9 @@ filesystem:
 
 config_schema:
   - ["app", "o", {title: "Feather Environment Sensor"}]
-  - ["app.pin", "i", 5, {title: "GPIO pin that sensor is connected to (default GPIO 5)"}]
+  - ["app.pin", "i", 4, {title: "GPIO pin that sensor is connected to (default GPIO 4)"}]
   - ["app.sensor", "i", 22, {title: "Type of DHT sensor (see DHT library)"}]
+  - ["app.scale", "s", "c", {title: "Display temp in c or f"}]
 
 # List of libraries used by this app, in order of initialisation
 libs:
@@ -44,4 +45,5 @@ libs:
   - origin: https://github.com/mongoose-os-libs/mjs
   - origin: https://github.com/mongoose-os-libs/ota-shadow
   - origin: https://github.com/mongoose-os-libs/ota-http-server
-
+  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-ssd1306
+  - origin: https://github.com/mongoose-os-libs/sensor-utils
