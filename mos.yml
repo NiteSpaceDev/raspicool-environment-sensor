@@ -27,7 +27,7 @@ filesystem:
 
 config_schema:
   - ["app", "o", {title: "Feather Environment Sensor"}]
-  - ["app.pin", "i", 4, {title: "GPIO pin that sensor is connected to (default GPIO 4)"}]
+  - ["app.pin", "i", 2, {title: "GPIO pin that sensor is connected to (default GPIO 2)"}]
   - ["app.sensor", "i", 22, {title: "Type of DHT sensor (see DHT library)"}]
   - ["app.scale", "s", "c", {title: "Display temp in c or f"}]
 
