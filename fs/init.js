@@ -1,24 +1,27 @@
 load('api_config.js');
 load('api_rpc.js');
+load('api_gpio.js');
 load('api_dht.js');
 load('api_timer.js');
 load('api_sensor_utils.js');
-load('api_arduino_ssd1306.js');
+load('api_ssd1306.js');
+
+
 
 let pin = Cfg.get('app.pin');
 let dht = DHT.create(pin, Cfg.get('app.sensor'));
 
-let oled = Adafruit_SSD1306.create_i2c(4, Adafruit_SSD1306.RES_128_32);
-oled.begin(Adafruit_SSD1306.SWITCHCAPVCC, 0x3C, true);
-oled.display();
+GPIO.set_mode(16, GPIO.MODE_OUTPUT);
+GPIO.write(16, GPIO.PULL_UP);
+
+let oled = SSD1306.get_oled();
+print("OLED WxH:  ", oled.getHeight(), "x", oled.getWidth());
+oled.refresh();
 
 let OLPrint = function(d, str) {
 	d.clearDisplay();
-	d.setTextSize(2);
-	d.setTextColorBg(Adafruit_SSD1306.WHITE, Adafruit_SSD1306.BLACK);
-	d.setCursor(4, 4);
-	d.write(str);
-	d.display();
+	d.drawStrColor(2, 14, str, 1, 0);
+	d.refresh();
 };
 
 Timer.set(1000, true, function() {
