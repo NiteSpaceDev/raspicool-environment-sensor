@@ -24,12 +24,13 @@ filesystem:
 # Custom configuration entries, settable via "device configuration"
 # Below is a custom firmware configuration example.
 # Uncomment and modify according to your needs:
-
 config_schema:
   - ["app", "o", {title: "Feather Environment Sensor"}]
   - ["app.pin", "i", 2, {title: "GPIO pin that sensor is connected to (default GPIO 2)"}]
   - ["app.sensor", "i", 22, {title: "Type of DHT sensor (see DHT library)"}]
   - ["app.scale", "s", "c", {title: "Display temp in c or f"}]
+  - ["spi.enable", true]
+  - ["i2c.enable", false]
 
 # List of libraries used by this app, in order of initialisation
 libs:
@@ -47,4 +48,4 @@ libs:
   - origin: https://github.com/mongoose-os-libs/ota-shadow
   - origin: https://github.com/mongoose-os-libs/ota-http-server
   - origin: https://github.com/mongoose-os-libs/sensor-utils
- 
+  - origin: https://github.com/mongoose-os-libs/bme280
