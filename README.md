@@ -10,8 +10,14 @@ This will eventually be an Adafruit Feather based environmental sensor
 - mos flash
 
 
-# Built for (MongooseOS)[https://mongoose-os.com]
+## Helpful commands
+Local build:
+  mos build --platform esp32 --local --verbose
 
-<p align="center">
-  <img src="https://mongoose-os.com/images/app1.gif" width="75%">
-</p>
+Local OTA Push
+  curl -v -F file=@build/fw.zip -F commit_timeout=60 http://192.168.1.102/update
+
+Local OTA commit
+  curl -v http://192.168.1.102/update/commit
+
+# Built for (MongooseOS)[https://mongoose-os.com]
