@@ -12,29 +12,33 @@ let sensor = BME280.createSPI();
 // On the ESP32 dev board we are using, GPIO pin 16 is connected to the OLED
 //  RST pin.   We pull this pin high to power the OLED
 // TODO - Make this a config element
-GPIO.set_mode(16, GPIO.MODE_OUTPUT);
-GPIO.write(16, GPIO.PULL_UP);
+GPIO.set_pull(16, GPIO.PULL_UP);
 
 let oled = SSD1306.get_oled();
-print("OLED WxH:  ", oled.getHeight(), "x", oled.getWidth());
 oled.refresh();
 
-let OLPrint = function(d, str) {
-	d.clearDisplay();
-	d.drawStrColor(2, 14, str, 1, 0);
-	d.refresh();
-};
-
-Timer.set(1000, true, function() {
+// Start a 5 second refresh loop (15 second "final" refresh?)
+Timer.set(5000, true, function() {
+		// Read the sensor data
 	  let tc = sensor.readTemp();
-	  let tf = SensorUtils.fahrenheit(tc);
+	  let tf = Math.round(SensorUtils.fahrenheit(tc));
 	  let temp = Math.round(tc);
 	  let hum = Math.round(sensor.readHumid());
-	  let press = sensor.readPress();
-	  print('Temperature:', tc, 'c    ', tf, 'f     -    Rel Humidity: ', hum, '%   Press: ', press);
-	  OLPrint(oled, "Temp: " + JSON.stringify(temp));
+	  let press = SensorUtils.atmospheresHg(sensor.readPress());
+
+		// Update the OLED Display
+		oled.clearDisplay();
+		oled.drawStrColor(2, 11, "Temp (c): " + JSON.stringify(temp),1,0);
+		oled.drawStrColor(2, 21, "Temp (f): " + JSON.stringify(tf),1,0);
+		oled.drawStrColor(2, 31, "Pressure: " + JSON.stringify(press),1,0);
+		oled.drawStrColor(2, 41, "Humidity: " + JSON.stringify(hum) + "%",1,0);
+		oled.refresh();
+
+		// Print output to console.
+		print('Temperature:', tc, 'c    ', tf, 'f     -    Rel Humidity: ', hum, '%   Press: ', press);
 	}, null);
 
+// RPC handlers for sensors
 RPC.addHandler('Temp.Read', function(args) {
 	  return { value: sensor.readTemp() };
 	});
