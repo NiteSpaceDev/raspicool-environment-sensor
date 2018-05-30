@@ -2,12 +2,23 @@ load('api_config.js');
 load('api_rpc.js');
 load('api_gpio.js');
 load('api_timer.js');
+load('api_mqtt.js');
 load('api_sensor_utils.js');
 load('api_ssd1306.js');
 load('api_bme280.js');
+load('api_adc.js');
+
+// Who are we
+let sensorname = "bedroom";
 
 // Turn on BMP / BME 280 sensor
 let sensor = BME280.createSPI();
+
+// Battery on pin 35
+let battery = 34;
+ADC.enable(battery);
+let battery2 = 35;
+ADC.enable(battery2);
 
 // On the ESP32 dev board we are using, GPIO pin 16 is connected to the OLED
 //  RST pin.   We pull this pin high to power the OLED
@@ -18,24 +29,33 @@ let oled = SSD1306.get_oled();
 oled.refresh();
 
 // Start a 5 second refresh loop (15 second "final" refresh?)
-Timer.set(5000, true, function() {
+Timer.set(15000, true, function() {
 		// Read the sensor data
-	  let tc = sensor.readTemp();
-	  let tf = Math.round(SensorUtils.fahrenheit(tc));
-	  let temp = Math.round(tc);
-	  let hum = Math.round(sensor.readHumid());
-	  let press = SensorUtils.atmospheresHg(sensor.readPress());
+		let reading={
+			"sensor": "bedroom",
+			"voltage": ADC.read(battery),
+			"voltageb": ADC.read(battery2),
+			"pressure": SensorUtils.atmospheresHg(sensor.readPress()),
+			"temp": sensor.readTemp(),
+			"humidity": Math.round(sensor.readHumid())
+		};
+	  let tf = Math.round(SensorUtils.fahrenheit(reading.temp));
+
+		reading.voltagec = reading.voltage + reading.voltageb;
 
 		// Update the OLED Display
 		oled.clearDisplay();
-		oled.drawStrColor(2, 11, "Temp (c): " + JSON.stringify(temp),1,0);
+		oled.drawStrColor(2, 11, "Temp (c): " + JSON.stringify(reading.temp),1,0);
 		oled.drawStrColor(2, 21, "Temp (f): " + JSON.stringify(tf),1,0);
-		oled.drawStrColor(2, 31, "Pressure: " + JSON.stringify(press),1,0);
-		oled.drawStrColor(2, 41, "Humidity: " + JSON.stringify(hum) + "%",1,0);
+		oled.drawStrColor(2, 31, "Pressure: " + JSON.stringify(reading.pressure),1,0);
+		oled.drawStrColor(2, 41, "Humidity: " + JSON.stringify(reading.humidity) + "%",1,0);
 		oled.refresh();
 
+		// Publish current data via mqtt
+		let res = MQTT.pub('environment/data', JSON.stringify(reading),0);
+
 		// Print output to console.
-		print('Temperature:', tc, 'c    ', tf, 'f     -    Rel Humidity: ', hum, '%   Press: ', press);
+		print(JSON.stringify(reading));
 	}, null);
 
 // RPC handlers for sensors
