@@ -12,7 +12,7 @@ let SSD1306 = {
   // Clear / Refresh / invert
   _clear: ffi('void mgos_ssd1306_clear(void *)'),
   _refresh: ffi('void mgos_ssd1306_refresh(void *)'),
-  _invert: ffi('void mgos_ssd1306_invert_display(void *, bool)'),
+  _invert: ffi('void mgos_ssd1306_invert_display(void *, int)'),
 
   // Drawing
   _drawpixel: ffi('void mgos_ssd1306_draw_pixel(void *, int, int, int)'),
@@ -20,8 +20,8 @@ let SSD1306 = {
   _drawvl: ffi('void mgos_ssd1306_draw_vline(void *, int, int, int, int)'),
   _drawr: ffi('void mgos_ssd1306_draw_rectangle(void *, int, int, int, int, int)'),
   _fillr: ffi('void mgos_ssd1306_fill_rectangle(void *, int, int, int, int, int)'),
-  _drawc: ffi('void mgos_ssd1306_draw_circle(void *, int, int, int, int)'),
-  _fillc: ffi('void mgos_ssd1306_fill_circle(void *, int, int, int, int)'),
+  _drawc: ffi('void mgos_ssd1306_draw_circle(void *, int, int, int)'),
+  _fillc: ffi('void mgos_ssd1306_fill_circle(void *, int, int, int)'),
 
   // Text
   _selfont: ffi('void mgos_ssd1306_select_font(void *, int)'),
