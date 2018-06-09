@@ -25,6 +25,12 @@ filesystem:
 # Below is a custom firmware configuration example.
 # Uncomment and modify according to your needs:
 config_schema:
+  - ["sensor", o, {title: "Environment sensor MQTT module"}]
+  - ["sensor.display", o, {title: "Display settings - only available on esp32 sensors"}]
+  - ["sensor.display.enable", b, false, {title: "Display enabled"}]
+  - ["sensor.name", s, "prototype", {title: "SensorName"}]
+  - ["sensor.hw", o, {title: "sensor hardware config"}]
+  - ["sensor.hw.batvadc", i, 32, {title: "GPIO/ADC pin connected to battery reference voltage"}]
   - ["app", "o", {title: "Feather Environment Sensor"}]
   - ["app.pin", "i", 2, {title: "GPIO pin that sensor is connected to (default GPIO 2)"}]
   - ["app.sensor", "i", 22, {title: "Type of DHT sensor (see DHT library)"}]

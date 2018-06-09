@@ -9,16 +9,17 @@ load('api_bme280.js');
 load('api_adc.js');
 
 // Who are we
-let sensorname = "bedroom";
+let sensorname = Cfg.get('sensor.name');
 
 // Turn on BMP / BME 280 sensor
 let sensor = BME280.createSPI();
 
 // Battery on pin 35
-let battery = 34;
+let battery = 32;
 ADC.enable(battery);
-let battery2 = 35;
-ADC.enable(battery2);
+
+//let OurADC = {
+//readv: ffi('int mgos_adc_read_voltage(int)'), };
 
 // On the ESP32 dev board we are using, GPIO pin 16 is connected to the OLED
 //  RST pin.   We pull this pin high to power the OLED
@@ -32,16 +33,18 @@ oled.refresh();
 Timer.set(15000, true, function() {
 		// Read the sensor data
 		let reading={
-			"sensor": "bedroom",
-			"voltage": ADC.read(battery),
-			"voltageb": ADC.read(battery2),
+			"sensor": sensorname,
+			"vadc": ADC.read(battery),
+	//		"vadcv": OurADC.readv(battery),
 			"pressure": SensorUtils.atmospheresHg(sensor.readPress()),
 			"temp": sensor.readTemp(),
 			"humidity": Math.round(sensor.readHumid())
 		};
 	  let tf = Math.round(SensorUtils.fahrenheit(reading.temp));
 
-		reading.voltagec = reading.voltage + reading.voltageb;
+		// Get battery voltage - 6800 / 2200 divider, adc ref 1.1
+		//
+		reading.voltage = (reading.vadc/4095)*1.1*(6800/2200);
 
 		// Update the OLED Display
 		oled.clearDisplay();
@@ -49,6 +52,7 @@ Timer.set(15000, true, function() {
 		oled.drawStrColor(2, 21, "Temp (f): " + JSON.stringify(tf),1,0);
 		oled.drawStrColor(2, 31, "Pressure: " + JSON.stringify(reading.pressure),1,0);
 		oled.drawStrColor(2, 41, "Humidity: " + JSON.stringify(reading.humidity) + "%",1,0);
+		oled.drawStrColor(2, 51, "Battery: " + JSON.stringify(reading.voltage),1,0);
 		oled.refresh();
 
 		// Publish current data via mqtt
