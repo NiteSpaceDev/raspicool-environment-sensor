@@ -11,13 +11,6 @@ This will eventually be an Adafruit Feather based environmental sensor
 
 
 ## Helpful commands
-Local build:
-  mos build --platform esp32 --local --verbose
-
-Local OTA Push
-  curl -v -F file=@build/fw.zip -F commit_timeout=60 http://192.168.1.102/update
-
-Local OTA commit
-  curl -v http://192.168.1.102/update/commit
+- See bashaliases.sh for information
 
 # Built for (MongooseOS)[https://mongoose-os.com]
