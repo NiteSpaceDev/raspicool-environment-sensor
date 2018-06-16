@@ -3,7 +3,12 @@
 # Aliases
 function mosbuild()
 {
-  mos build --local --verbose --platform $1
+  mos build --local --verbose --platform esp32
+}
+
+function mosbuild8266()
+{
+  mos build --local --verbose --platform esp8266
 }
 
 function otaupdate()
