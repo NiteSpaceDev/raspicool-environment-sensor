@@ -27,3 +27,11 @@ SCS / CMD - GP11 - HW19 - /CS
 |-------|--------|------------------|
 |CLK| | |
 |Data| | | 
+
+Addresses:
+BME280 - 0x76 or 0x77 - based on SD0 - [BME280 Datasheet](https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280_DS001-12.pdf) - [AliExpress Src](https://www.aliexpress.com/item/10PCS-BME280-up-LGA8/32838325290.html)
+
+
+
+# PCB Design notes
+
