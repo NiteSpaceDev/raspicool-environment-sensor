@@ -4,3 +4,7 @@ deps/
 build/
 
 *.pem
+
+*.bak
+
+*.kicad_pcb-bak
