@@ -187,14 +187,14 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "Rapicool Environment Sensor"
 Date ""
 Rev ""
-Comp ""
+Comp "https://github.com/nitespacedev/raspicool-environment-sensor"
 Comment1 ""
-Comment2 ""
+Comment2 "SPI / I2C expansion pads setup for 1mm spacing, may be left unpopulated"
 Comment3 ""
-Comment4 ""
+Comment4 "ESP32-WROOM based environment sensor"
 $EndDescr
 $Comp
 L ESP32-WROOM U2
@@ -210,39 +210,25 @@ $EndComp
 $Comp
 L GND #PWR01
 U 1 1 5B25A5F0
-P 3950 3950
-F 0 "#PWR01" H 3950 3700 50  0001 C CNN
-F 1 "GND" H 3950 3800 50  0000 C CNN
-F 2 "" H 3950 3950 50  0001 C CNN
-F 3 "" H 3950 3950 50  0001 C CNN
-	1    3950 3950
+P 4600 4100
+F 0 "#PWR01" H 4600 3850 50  0001 C CNN
+F 1 "GND" H 4600 3950 50  0000 C CNN
+F 2 "" H 4600 4100 50  0001 C CNN
+F 3 "" H 4600 4100 50  0001 C CNN
+	1    4600 4100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4100 3750 4100 4100
-Wire Wire Line
-	4100 3950 3950 3950
-Wire Wire Line
-	4100 4100 4600 4100
-Connection ~ 4100 3950
 $Comp
 L GND #PWR02
 U 1 1 5B25A612
-P 6150 3900
-F 0 "#PWR02" H 6150 3650 50  0001 C CNN
-F 1 "GND" H 6150 3750 50  0000 C CNN
-F 2 "" H 6150 3900 50  0001 C CNN
-F 3 "" H 6150 3900 50  0001 C CNN
-	1    6150 3900
-	1    0    0    -1  
+P 6100 3600
+F 0 "#PWR02" H 6100 3350 50  0001 C CNN
+F 1 "GND" H 6100 3450 50  0000 C CNN
+F 2 "" H 6100 3600 50  0001 C CNN
+F 3 "" H 6100 3600 50  0001 C CNN
+	1    6100 3600
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	5950 3700 6150 3700
-Wire Wire Line
-	6150 3600 6150 3900
-Wire Wire Line
-	5950 3600 6150 3600
-Connection ~ 6150 3700
 Text GLabel 3400 1400 0    60   Input ~ 0
 VCC
 $Comp
@@ -267,56 +253,28 @@ F 3 "" H 6300 7300 50  0001 C CNN
 	1    6300 7300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5800 7300 6300 7300
-Wire Wire Line
-	5800 7300 5800 7200
-Wire Wire Line
-	6000 7200 6000 7300
-Connection ~ 6000 7300
 Text GLabel 6300 5900 2    60   Input ~ 0
 VCC
-Wire Wire Line
-	5800 5900 6300 5900
-Wire Wire Line
-	5800 5850 5800 6000
-Wire Wire Line
-	6000 5850 6000 6000
-Connection ~ 6000 5900
 Text GLabel 3850 2850 0    60   Input ~ 0
 bsense
-Wire Wire Line
-	3850 2850 4100 2850
 NoConn ~ 4800 4100
 NoConn ~ 4900 4100
 NoConn ~ 5000 4100
 NoConn ~ 5100 4100
 NoConn ~ 5200 4100
 NoConn ~ 5300 4100
-Text GLabel 3800 3250 0    60   Input ~ 0
+Text GLabel 3850 3250 0    60   Input ~ 0
 spi1_clk
 Text GLabel 3350 3350 0    60   Input ~ 0
 spi1_mosi
 Text GLabel 3850 3450 0    60   Input ~ 0
 spi1_miso
-Wire Wire Line
-	3350 3350 4100 3350
-Wire Wire Line
-	3800 3250 4100 3250
-Wire Wire Line
-	3850 3450 4100 3450
 Text GLabel 3350 2950 0    60   Input ~ 0
 spi1_ssa
 Text GLabel 3850 3050 0    60   Input ~ 0
 spi1_ssb
 Text GLabel 3350 3150 0    60   Input ~ 0
 spi1_ssc
-Wire Wire Line
-	3350 3150 4100 3150
-Wire Wire Line
-	3350 2950 4100 2950
-Wire Wire Line
-	3850 3050 4100 3050
 $Comp
 L C C5
 U 1 1 5B39873B
@@ -351,10 +309,10 @@ F 3 "" H 3950 2200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C2
+L C C4
 U 1 1 5B3988B3
 P 2900 2150
-F 0 "C2" H 2925 2250 50  0000 L CNN
+F 0 "C4" H 2925 2250 50  0000 L CNN
 F 1 "0.1uF" H 2925 2050 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1210" H 2938 2000 50  0001 C CNN
 F 3 "" H 2900 2150 50  0001 C CNN
@@ -383,34 +341,6 @@ F 3 "" H 2550 2150 50  0001 C CNN
 	1    2550 2150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3400 1400 3500 1400
-Wire Wire Line
-	3500 1400 3500 2450
-Wire Wire Line
-	3500 2450 4100 2450
-Wire Wire Line
-	3100 1750 3650 1750
-Connection ~ 3500 1750
-Wire Wire Line
-	3100 2050 3100 2550
-Wire Wire Line
-	3100 2150 3050 2150
-Wire Wire Line
-	2750 2150 2550 2150
-Wire Wire Line
-	3100 2550 4100 2550
-Connection ~ 3100 2150
-Connection ~ 3500 2050
-Wire Wire Line
-	3650 2050 3500 2050
-Wire Wire Line
-	3500 1750 3500 1750
-Wire Wire Line
-	3950 1750 3950 2200
-Connection ~ 3950 2050
-Wire Wire Line
-	3150 7200 1050 7200
 $Comp
 L C C1
 U 1 1 5B3A6753
@@ -433,13 +363,6 @@ F 3 "" H 1250 7050 50  0001 C CNN
 	1    1250 7050
 	1    0    0    -1  
 $EndComp
-Connection ~ 1250 6850
-Wire Wire Line
-	1350 6850 1250 6850
-Wire Wire Line
-	1250 6800 1250 6900
-Connection ~ 1250 7200
-Connection ~ 1250 6500
 $Comp
 L R R1
 U 1 1 5B3A6769
@@ -451,28 +374,11 @@ F 3 "" H 1250 6650 50  0001 C CNN
 	1    1250 6650
 	1    0    0    -1  
 $EndComp
-Connection ~ 1850 7200
-Wire Wire Line
-	1850 6800 1850 7200
-Wire Wire Line
-	1050 6500 1400 6500
-Connection ~ 2050 6500
-Wire Wire Line
-	2050 6500 2050 6700
-Connection ~ 1850 6500
-Wire Wire Line
-	1700 6500 2150 6500
-Wire Wire Line
-	3150 6850 3150 7200
-Wire Wire Line
-	2050 6700 2150 6700
-Wire Wire Line
-	1050 7200 1050 6900
 $Comp
-L C C4
+L C C3
 U 1 1 5B3A6788
 P 3700 6700
-F 0 "C4" H 3725 6800 50  0000 L CNN
+F 0 "C3" H 3725 6800 50  0000 L CNN
 F 1 "1uF" H 3725 6600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1210" H 3738 6550 50  0001 C CNN
 F 3 "" H 3700 6700 50  0001 C CNN
@@ -480,10 +386,10 @@ F 3 "" H 3700 6700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C3
+L C C2
 U 1 1 5B3A678F
 P 3350 6700
-F 0 "C3" H 3375 6800 50  0000 L CNN
+F 0 "C2" H 3375 6800 50  0000 L CNN
 F 1 "10uF" H 3375 6600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1210" H 3388 6550 50  0001 C CNN
 F 3 "" H 3350 6700 50  0001 C CNN
@@ -545,26 +451,8 @@ Text GLabel 3850 6550 2    60   Input ~ 0
 VCC
 Text GLabel 1350 6850 2    60   Input ~ 0
 bsense
-Wire Wire Line
-	3150 6850 3700 6850
-Connection ~ 3150 6900
-Connection ~ 3350 6850
-Wire Wire Line
-	3150 6550 3850 6550
-Wire Wire Line
-	3150 6550 3150 6500
-Connection ~ 3350 6550
-Connection ~ 3700 6550
 Text Notes 3000 7500 2    60   ~ 0
 Power In - Li-Ion battery, 4.2v peak
-Wire Notes Line
-	600  6150 4200 6150
-Wire Notes Line
-	4200 6150 4200 7700
-Wire Notes Line
-	4200 7700 600  7700
-Wire Notes Line
-	600  7700 600  6150
 $Comp
 L GND #PWR07
 U 1 1 5B39DC63
@@ -609,16 +497,6 @@ F 3 "" H 6000 5700 50  0001 C CNN
 	1    6000 5700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6000 5500 6000 5550
-Wire Wire Line
-	5800 5500 6000 5500
-Wire Wire Line
-	5800 5550 5800 5500
-Connection ~ 5900 5500
-Connection ~ 5800 5900
-Wire Wire Line
-	5250 6300 5300 6300
 Text GLabel 5100 6500 0    60   Input ~ 0
 iic1_clk
 Text GLabel 5100 6700 0    60   Input ~ 0
@@ -647,42 +525,8 @@ F 3 "" H 4850 6800 50  0001 C CNN
 	1    4850 6800
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5150 6900 5150 7050
-Wire Wire Line
-	4600 6900 5300 6900
-Wire Wire Line
-	4700 6900 4700 6800
-Connection ~ 5150 6900
-Wire Wire Line
-	5200 6800 5200 6700
-Wire Wire Line
-	5100 6700 5300 6700
-Connection ~ 5200 6700
-Wire Wire Line
-	4600 6900 4600 6400
-Wire Wire Line
-	4600 6400 4700 6400
-Connection ~ 4700 6900
-Wire Wire Line
-	5000 6400 5200 6400
-Wire Wire Line
-	5200 6400 5200 6500
-Connection ~ 5200 6500
-Wire Wire Line
-	5000 6800 5200 6800
-Wire Wire Line
-	5100 6500 5300 6500
 Text Notes 4700 7600 0    60   ~ 0
 BME280 Built-in sensor\nI2C connection, always powered
-Wire Notes Line
-	4400 5300 6800 5300
-Wire Notes Line
-	6800 5300 6800 7700
-Wire Notes Line
-	6800 7700 4400 7700
-Wire Notes Line
-	4400 7700 4400 5300
 Text GLabel 7500 5750 0    60   Input ~ 0
 VCC
 Text GLabel 7500 5850 0    60   Input ~ 0
@@ -711,8 +555,6 @@ F 3 "" H 7700 5850 50  0001 C CNN
 	1    7700 5850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7350 6050 7500 6050
 Text GLabel 8450 5750 0    60   Input ~ 0
 VCC
 Text GLabel 8450 5850 0    60   Input ~ 0
@@ -741,8 +583,6 @@ F 3 "" H 8650 5850 50  0001 C CNN
 	1    8650 5850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 6050 8450 6050
 Text GLabel 9350 5750 0    60   Input ~ 0
 iic1_en1
 Text GLabel 9350 5850 0    60   Input ~ 0
@@ -771,8 +611,6 @@ F 3 "" H 9550 5850 50  0001 C CNN
 	1    9550 5850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9200 6050 9350 6050
 Text GLabel 10350 5750 0    60   Input ~ 0
 iic1_en2
 Text GLabel 10350 5850 0    60   Input ~ 0
@@ -801,16 +639,6 @@ F 3 "" H 10550 5850 50  0001 C CNN
 	1    10550 5850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10200 6050 10350 6050
-Wire Notes Line
-	6950 6450 6950 5300
-Wire Notes Line
-	6950 5300 11100 5300
-Wire Notes Line
-	11100 5300 11100 6450
-Wire Notes Line
-	11100 6450 6950 6450
 Text Notes 10700 6400 2    60   ~ 0
 I2C expansion connectors - 2 always powered, 2 with power enable pins
 Text GLabel 6100 3000 2    60   Input ~ 0
@@ -821,6 +649,194 @@ Text GLabel 6550 3300 2    60   Input ~ 0
 iic1_clk
 Text GLabel 6100 3200 2    60   Input ~ 0
 iic1_sda
+Text GLabel 9100 4250 0    60   Input ~ 0
+VCC
+Text GLabel 9100 4350 0    60   Input ~ 0
+spi1_clk
+Text GLabel 9100 4450 0    60   Input ~ 0
+spi1_mosi
+Text GLabel 9100 4550 0    60   Input ~ 0
+spi1_miso
+$Comp
+L GND #PWR013
+U 1 1 5B3ADD7E
+P 9000 4750
+F 0 "#PWR013" H 9000 4500 50  0001 C CNN
+F 1 "GND" H 9000 4600 50  0000 C CNN
+F 2 "" H 9000 4750 50  0001 C CNN
+F 3 "" H 9000 4750 50  0001 C CNN
+	1    9000 4750
+	1    0    0    -1  
+$EndComp
+Text GLabel 9100 4650 0    60   Input ~ 0
+spi1_ssb
+$Comp
+L Conn_01x06 J6
+U 1 1 5B3ADE47
+P 9300 4450
+F 0 "J6" H 9300 4750 50  0000 C CNN
+F 1 "Conn_01x06" H 9300 4050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 9300 4450 50  0001 C CNN
+F 3 "" H 9300 4450 50  0001 C CNN
+	1    9300 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 7300 6300 7300
+Wire Wire Line
+	5800 7300 5800 7200
+Wire Wire Line
+	6000 7200 6000 7300
+Connection ~ 6000 7300
+Wire Wire Line
+	5800 5900 6300 5900
+Wire Wire Line
+	5800 5850 5800 6000
+Wire Wire Line
+	6000 5850 6000 6000
+Connection ~ 6000 5900
+Wire Wire Line
+	3850 2850 4100 2850
+Wire Wire Line
+	3350 3350 4100 3350
+Wire Wire Line
+	3850 3450 4100 3450
+Wire Wire Line
+	3350 3150 4100 3150
+Wire Wire Line
+	3350 2950 4100 2950
+Wire Wire Line
+	3850 3050 4100 3050
+Wire Wire Line
+	3400 1400 3500 1400
+Wire Wire Line
+	3500 1400 3500 2450
+Wire Wire Line
+	3500 2450 4100 2450
+Wire Wire Line
+	3100 1750 3650 1750
+Connection ~ 3500 1750
+Wire Wire Line
+	3100 2050 3100 2550
+Wire Wire Line
+	3100 2150 3050 2150
+Wire Wire Line
+	2750 2150 2550 2150
+Wire Wire Line
+	3100 2550 4100 2550
+Connection ~ 3100 2150
+Connection ~ 3500 2050
+Wire Wire Line
+	3650 2050 3500 2050
+Wire Wire Line
+	3500 1750 3500 1750
+Wire Wire Line
+	3950 1750 3950 2200
+Connection ~ 3950 2050
+Wire Wire Line
+	3150 7200 1050 7200
+Connection ~ 1250 6850
+Wire Wire Line
+	1350 6850 1250 6850
+Wire Wire Line
+	1250 6800 1250 6900
+Connection ~ 1250 7200
+Connection ~ 1250 6500
+Connection ~ 1850 7200
+Wire Wire Line
+	1850 6800 1850 7200
+Wire Wire Line
+	1050 6500 1400 6500
+Connection ~ 2050 6500
+Wire Wire Line
+	2050 6500 2050 6700
+Connection ~ 1850 6500
+Wire Wire Line
+	1700 6500 2150 6500
+Wire Wire Line
+	3150 6850 3150 7200
+Wire Wire Line
+	2050 6700 2150 6700
+Wire Wire Line
+	1050 7200 1050 6900
+Wire Wire Line
+	3150 6850 3700 6850
+Connection ~ 3150 6900
+Connection ~ 3350 6850
+Wire Wire Line
+	3150 6550 3850 6550
+Wire Wire Line
+	3150 6550 3150 6500
+Connection ~ 3350 6550
+Connection ~ 3700 6550
+Wire Notes Line
+	600  6150 4200 6150
+Wire Notes Line
+	4200 6150 4200 7700
+Wire Notes Line
+	4200 7700 600  7700
+Wire Notes Line
+	600  7700 600  6150
+Wire Wire Line
+	6000 5500 6000 5550
+Wire Wire Line
+	5800 5500 6000 5500
+Wire Wire Line
+	5800 5550 5800 5500
+Connection ~ 5900 5500
+Connection ~ 5800 5900
+Wire Wire Line
+	5250 6300 5300 6300
+Wire Wire Line
+	5150 6900 5150 7050
+Wire Wire Line
+	4600 6900 5300 6900
+Wire Wire Line
+	4700 6900 4700 6800
+Connection ~ 5150 6900
+Wire Wire Line
+	5200 6800 5200 6700
+Wire Wire Line
+	5100 6700 5300 6700
+Connection ~ 5200 6700
+Wire Wire Line
+	4600 6900 4600 6400
+Wire Wire Line
+	4600 6400 4700 6400
+Connection ~ 4700 6900
+Wire Wire Line
+	5000 6400 5200 6400
+Wire Wire Line
+	5200 6400 5200 6500
+Connection ~ 5200 6500
+Wire Wire Line
+	5000 6800 5200 6800
+Wire Wire Line
+	5100 6500 5300 6500
+Wire Notes Line
+	4400 5300 6800 5300
+Wire Notes Line
+	6800 5300 6800 7700
+Wire Notes Line
+	6800 7700 4400 7700
+Wire Notes Line
+	4400 7700 4400 5300
+Wire Wire Line
+	7350 6050 7500 6050
+Wire Wire Line
+	8300 6050 8450 6050
+Wire Wire Line
+	9200 6050 9350 6050
+Wire Wire Line
+	10200 6050 10350 6050
+Wire Notes Line
+	6950 6450 6950 5300
+Wire Notes Line
+	6950 5300 11100 5300
+Wire Notes Line
+	11100 5300 11100 6450
+Wire Notes Line
+	11100 6450 6950 6450
 Wire Wire Line
 	5950 3300 6550 3300
 Wire Wire Line
@@ -829,4 +845,149 @@ Wire Wire Line
 	5950 3000 6100 3000
 Wire Wire Line
 	5950 2900 6550 2900
+Wire Wire Line
+	9000 4750 9100 4750
+Text GLabel 8000 4250 0    60   Input ~ 0
+VCC
+Text GLabel 8000 4350 0    60   Input ~ 0
+spi1_clk
+Text GLabel 8000 4450 0    60   Input ~ 0
+spi1_mosi
+Text GLabel 8000 4550 0    60   Input ~ 0
+spi1_miso
+$Comp
+L GND #PWR014
+U 1 1 5B3AE7A7
+P 7900 4750
+F 0 "#PWR014" H 7900 4500 50  0001 C CNN
+F 1 "GND" H 7900 4600 50  0000 C CNN
+F 2 "" H 7900 4750 50  0001 C CNN
+F 3 "" H 7900 4750 50  0001 C CNN
+	1    7900 4750
+	1    0    0    -1  
+$EndComp
+Text GLabel 8000 4650 0    60   Input ~ 0
+spi1_ssa
+$Comp
+L Conn_01x06 J5
+U 1 1 5B3AE7AE
+P 8200 4450
+F 0 "J5" H 8200 4750 50  0000 C CNN
+F 1 "Conn_01x06" H 8200 4050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 8200 4450 50  0001 C CNN
+F 3 "" H 8200 4450 50  0001 C CNN
+	1    8200 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 4750 8000 4750
+Text GLabel 10150 4250 0    60   Input ~ 0
+VCC
+Text GLabel 10150 4350 0    60   Input ~ 0
+spi1_clk
+Text GLabel 10150 4450 0    60   Input ~ 0
+spi1_mosi
+Text GLabel 10150 4550 0    60   Input ~ 0
+spi1_miso
+$Comp
+L GND #PWR015
+U 1 1 5B3AE846
+P 10050 4750
+F 0 "#PWR015" H 10050 4500 50  0001 C CNN
+F 1 "GND" H 10050 4600 50  0000 C CNN
+F 2 "" H 10050 4750 50  0001 C CNN
+F 3 "" H 10050 4750 50  0001 C CNN
+	1    10050 4750
+	1    0    0    -1  
+$EndComp
+Text GLabel 10150 4650 0    60   Input ~ 0
+spi1_ssc
+$Comp
+L Conn_01x06 J7
+U 1 1 5B3AE84D
+P 10350 4450
+F 0 "J7" H 10350 4750 50  0000 C CNN
+F 1 "Conn_01x06" H 10350 4050 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 10350 4450 50  0001 C CNN
+F 3 "" H 10350 4450 50  0001 C CNN
+	1    10350 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 4750 10150 4750
+Wire Notes Line
+	6950 5200 6950 4000
+Wire Notes Line
+	6950 4000 11100 4000
+Wire Notes Line
+	11100 4000 11100 5200
+Wire Notes Line
+	11100 5200 6950 5200
+Text Notes 8450 5100 0    60   ~ 0
+SPI expansion connectors
+Text GLabel 3350 3550 0    60   Input ~ 0
+jt_mtms
+Text GLabel 3850 3650 0    60   Input ~ 0
+jt_mtdi
+Wire Wire Line
+	3850 3250 4100 3250
+Wire Wire Line
+	3350 3550 4100 3550
+Wire Wire Line
+	3850 3650 4100 3650
+$Comp
+L GND #PWR016
+U 1 1 5B3BCA44
+P 4100 3750
+F 0 "#PWR016" H 4100 3500 50  0001 C CNN
+F 1 "GND" H 4100 3600 50  0000 C CNN
+F 2 "" H 4100 3750 50  0001 C CNN
+F 3 "" H 4100 3750 50  0001 C CNN
+	1    4100 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR017
+U 1 1 5B3BCBD4
+P 6550 3700
+F 0 "#PWR017" H 6550 3450 50  0001 C CNN
+F 1 "GND" H 6550 3550 50  0000 C CNN
+F 2 "" H 6550 3700 50  0001 C CNN
+F 3 "" H 6550 3700 50  0001 C CNN
+	1    6550 3700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5950 3700 6550 3700
+Wire Wire Line
+	5950 3600 6100 3600
+Text GLabel 4850 4300 2    60   Input ~ 0
+jt_mtck
+Text GLabel 5250 4450 0    60   Input ~ 0
+jt_mtdo
+Wire Wire Line
+	5250 4450 5400 4450
+Wire Wire Line
+	5400 4450 5400 4100
+Wire Wire Line
+	4700 4100 4700 4300
+Wire Wire Line
+	4700 4300 4850 4300
+NoConn ~ 4100 2650
+NoConn ~ 4100 2750
+Text GLabel 6550 3500 2    60   Input ~ 0
+jt_prog
+Wire Wire Line
+	6550 3500 5950 3500
+$Comp
+L Conn_02x05_Odd_Even J?
+U 1 1 5B3C29B9
+P 1900 5600
+F 0 "J?" H 1950 5900 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 1950 5300 50  0000 C CNN
+F 2 "" H 1900 5600 50  0001 C CNN
+F 3 "" H 1900 5600 50  0001 C CNN
+	1    1900 5600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
