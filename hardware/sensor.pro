@@ -1,4 +1,4 @@
-update=2018-07-01 01:09:15
+update=2018-07-03 23:58:25
 version=1
 last_client=kicad
 [pcbnew]
@@ -211,3 +211,13 @@ LibName179=kicad-symbols/Triac_Thyristor
 LibName180=kicad-symbols/Valve
 LibName181=kicad-symbols/Video
 LibName182=snapeda/AP2112K-3.3TRG1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=./
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
