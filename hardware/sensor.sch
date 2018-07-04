@@ -357,22 +357,22 @@ L R R2
 U 1 1 5B3A675C
 P 1250 7050
 F 0 "R2" V 1330 7050 50  0000 C CNN
-F 1 "R" V 1250 7050 50  0000 C CNN
+F 1 "3.3k" V 1250 7050 50  0000 C CNN
 F 2 "Resistors_SMD:R_1206" V 1180 7050 50  0001 C CNN
 F 3 "" H 1250 7050 50  0001 C CNN
 	1    1250 7050
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L R R1
 U 1 1 5B3A6769
 P 1250 6650
 F 0 "R1" V 1330 6650 50  0000 C CNN
-F 1 "R" V 1250 6650 50  0000 C CNN
+F 1 "10k" V 1250 6650 50  0000 C CNN
 F 2 "Resistors_SMD:R_1206" V 1180 6650 50  0001 C CNN
 F 3 "" H 1250 6650 50  0001 C CNN
 	1    1250 6650
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L C C3
@@ -449,7 +449,7 @@ F 3 "" H 1850 7200 50  0001 C CNN
 $EndComp
 Text GLabel 3850 6550 2    60   Input ~ 0
 VCC
-Text GLabel 1350 6850 2    60   Input ~ 0
+Text GLabel 1450 6850 2    60   Input ~ 0
 bsense
 Text Notes 3000 7500 2    60   ~ 0
 Power In - Li-Ion battery, 4.2v peak
@@ -550,7 +550,7 @@ U 1 1 5B3A6D68
 P 7700 5850
 F 0 "J1" H 7700 6050 50  0000 C CNN
 F 1 "Conn_01x04" H 7700 5550 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch1.00mm" H 7700 5850 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 7700 5850 50  0001 C CNN
 F 3 "" H 7700 5850 50  0001 C CNN
 	1    7700 5850
 	1    0    0    -1  
@@ -578,7 +578,7 @@ U 1 1 5B3A71A8
 P 8650 5850
 F 0 "J2" H 8650 6050 50  0000 C CNN
 F 1 "Conn_01x04" H 8650 5550 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch1.00mm" H 8650 5850 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 8650 5850 50  0001 C CNN
 F 3 "" H 8650 5850 50  0001 C CNN
 	1    8650 5850
 	1    0    0    -1  
@@ -606,7 +606,7 @@ U 1 1 5B3A794D
 P 9550 5850
 F 0 "J3" H 9550 6050 50  0000 C CNN
 F 1 "Conn_01x04" H 9550 5550 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch1.00mm" H 9550 5850 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 9550 5850 50  0001 C CNN
 F 3 "" H 9550 5850 50  0001 C CNN
 	1    9550 5850
 	1    0    0    -1  
@@ -634,7 +634,7 @@ U 1 1 5B3A801B
 P 10550 5850
 F 0 "J4" H 10550 6050 50  0000 C CNN
 F 1 "Conn_01x04" H 10550 5550 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch1.00mm" H 10550 5850 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 10550 5850 50  0001 C CNN
 F 3 "" H 10550 5850 50  0001 C CNN
 	1    10550 5850
 	1    0    0    -1  
@@ -676,7 +676,7 @@ U 1 1 5B3ADE47
 P 9300 4450
 F 0 "J6" H 9300 4750 50  0000 C CNN
 F 1 "Conn_01x06" H 9300 4050 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 9300 4450 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 9300 4450 50  0001 C CNN
 F 3 "" H 9300 4450 50  0001 C CNN
 	1    9300 4450
 	1    0    0    -1  
@@ -737,7 +737,7 @@ Wire Wire Line
 	3150 7200 1050 7200
 Connection ~ 1250 6850
 Wire Wire Line
-	1350 6850 1250 6850
+	1450 6850 1250 6850
 Wire Wire Line
 	1250 6800 1250 6900
 Connection ~ 1250 7200
@@ -874,7 +874,7 @@ U 1 1 5B3AE7AE
 P 8200 4450
 F 0 "J5" H 8200 4750 50  0000 C CNN
 F 1 "Conn_01x06" H 8200 4050 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 8200 4450 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 8200 4450 50  0001 C CNN
 F 3 "" H 8200 4450 50  0001 C CNN
 	1    8200 4450
 	1    0    0    -1  
@@ -908,7 +908,7 @@ U 1 1 5B3AE84D
 P 10350 4450
 F 0 "J7" H 10350 4750 50  0000 C CNN
 F 1 "Conn_01x06" H 10350 4050 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 10350 4450 50  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 10350 4450 50  0001 C CNN
 F 3 "" H 10350 4450 50  0001 C CNN
 	1    10350 4450
 	1    0    0    -1  
@@ -982,12 +982,12 @@ Wire Wire Line
 $Comp
 L Conn_01x06 J8
 U 1 1 5B3C465C
-P 1950 5500
-F 0 "J8" H 1950 5800 50  0000 C CNN
-F 1 "Conn_01x06" H 1950 5100 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch1.00mm" H 1950 5500 50  0001 C CNN
-F 3 "" H 1950 5500 50  0001 C CNN
-	1    1950 5500
+P 2550 5500
+F 0 "J8" H 2550 5800 50  0000 C CNN
+F 1 "Conn_01x06" H 2550 5100 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2550 5500 50  0001 C CNN
+F 3 "" H 2550 5500 50  0001 C CNN
+	1    2550 5500
 	1    0    0    -1  
 $EndComp
 Text GLabel 1650 5300 0    60   Input ~ 0
@@ -1012,57 +1012,55 @@ $EndComp
 Text GLabel 1200 5800 0    60   Input ~ 0
 VCC
 Wire Wire Line
-	1650 5300 1750 5300
+	1650 5300 1900 5300
 Wire Wire Line
-	1750 5400 1200 5400
+	1900 5400 1200 5400
 Wire Wire Line
-	1200 5600 1750 5600
+	1200 5600 1900 5600
 Wire Wire Line
-	1750 5500 1650 5500
+	1900 5500 1650 5500
 Wire Wire Line
-	1650 5700 1750 5700
+	1650 5700 2350 5700
 Wire Wire Line
-	1750 5800 1200 5800
-Text GLabel 2700 5500 0    60   Input ~ 0
+	2350 5800 1200 5800
+Text GLabel 3300 5500 0    60   Input ~ 0
 jt_prog
 $Comp
 L GND #PWR019
 U 1 1 5B3C6E69
-P 3300 5500
-F 0 "#PWR019" H 3300 5250 50  0001 C CNN
-F 1 "GND" H 3300 5350 50  0000 C CNN
-F 2 "" H 3300 5500 50  0001 C CNN
-F 3 "" H 3300 5500 50  0001 C CNN
-	1    3300 5500
+P 3900 5500
+F 0 "#PWR019" H 3900 5250 50  0001 C CNN
+F 1 "GND" H 3900 5350 50  0000 C CNN
+F 2 "" H 3900 5500 50  0001 C CNN
+F 3 "" H 3900 5500 50  0001 C CNN
+	1    3900 5500
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Jumper_NO_Small JP1
 U 1 1 5B3C6EFA
-P 3000 5500
-F 0 "JP1" H 3000 5580 50  0000 C CNN
-F 1 "Jumper_NO_Small" H 3010 5440 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0402" H 3000 5500 50  0001 C CNN
-F 3 "" H 3000 5500 50  0001 C CNN
-	1    3000 5500
+P 3600 5500
+F 0 "JP1" H 3600 5580 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 3610 5440 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 3600 5500 50  0001 C CNN
+F 3 "" H 3600 5500 50  0001 C CNN
+	1    3600 5500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2700 5500 2900 5500
+	3300 5500 3500 5500
 Wire Wire Line
-	3100 5500 3300 5500
-Text Notes 2500 5700 0    60   ~ 0
+	3700 5500 3900 5500
+Text Notes 3100 5700 0    60   ~ 0
 Enable programming
 Text Notes 1050 6050 0    60   ~ 0
 JTAG Debugging pads
 Wire Notes Line
 	600  6100 600  5150
 Wire Notes Line
-	600  5150 3550 5150
+	600  5150 4200 5150
 Wire Notes Line
-	3550 5150 3550 6100
-Wire Notes Line
-	3550 6100 600  6100
+	600  6100 4200 6100
 NoConn ~ 5950 2300
 NoConn ~ 5950 2400
 NoConn ~ 5950 2500
@@ -1075,4 +1073,72 @@ Text Notes 3650 1600 0    60   ~ 0
 Chip VCC filter
 Text Notes 2300 1700 0    60   ~ 0
 Chip powerup RC timer
+$Comp
+L R R6
+U 1 1 5B3CD9E4
+P 2050 5300
+F 0 "R6" V 2050 5350 50  0000 C CNN
+F 1 "100" V 2050 5250 50  0001 C CNN
+F 2 "Resistors_SMD:R_1206" V 1980 5300 50  0001 C CNN
+F 3 "" H 2050 5300 50  0001 C CNN
+	1    2050 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L R R7
+U 1 1 5B3CDE47
+P 2050 5400
+F 0 "R7" V 2050 5450 50  0000 C CNN
+F 1 "100" V 2050 5350 50  0001 C CNN
+F 2 "Resistors_SMD:R_1206" V 1980 5400 50  0001 C CNN
+F 3 "" H 2050 5400 50  0001 C CNN
+	1    2050 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L R R8
+U 1 1 5B3CDECB
+P 2050 5500
+F 0 "R8" V 2050 5550 50  0000 C CNN
+F 1 "100" V 2050 5450 50  0001 C CNN
+F 2 "Resistors_SMD:R_1206" V 1980 5500 50  0001 C CNN
+F 3 "" H 2050 5500 50  0001 C CNN
+	1    2050 5500
+	0    1    1    0   
+$EndComp
+$Comp
+L R R9
+U 1 1 5B3CDF35
+P 2050 5600
+F 0 "R9" V 2050 5650 50  0000 C CNN
+F 1 "100" V 2050 5550 50  0001 C CNN
+F 2 "Resistors_SMD:R_1206" V 1980 5600 50  0001 C CNN
+F 3 "" H 2050 5600 50  0001 C CNN
+	1    2050 5600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 5600 2350 5600
+Wire Wire Line
+	2350 5500 2200 5500
+Wire Wire Line
+	2200 5400 2350 5400
+Wire Wire Line
+	2200 5300 2350 5300
+$Comp
+L C C9
+U 1 1 5B3CE78D
+P 1400 7050
+F 0 "C9" H 1425 7150 50  0000 L CNN
+F 1 "0.1uF" H 1425 6950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_1206" H 1438 6900 50  0001 C CNN
+F 3 "" H 1400 7050 50  0001 C CNN
+	1    1400 7050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 6900 1400 6850
+Connection ~ 1400 6850
+Wire Notes Line
+	4200 6100 4200 5150
 $EndSCHEMATC
