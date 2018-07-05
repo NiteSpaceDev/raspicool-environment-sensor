@@ -8,3 +8,5 @@ build/
 *.bak
 
 *.kicad_pcb-bak
+
+hardware/gerber/

@@ -1,0 +1,18 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"R7,R6,R8,R9";"R_1206";4;"100";;;
+2;"BT1";"Keystone_1042_1x18650";1;"Battery";;;
+3;"U1";"SOT95P285X140-5N";1;"AP2112K-3.3TRG1";;;
+4;"U2";"ESP32-WROOM";1;"ESP32-WROOM";;;
+5;"U3";"Bosch_LGA-8_2.5x2.5mm_Pitch0.65mm_ClockwisePinNumbering";1;"BME280";;;
+6;"C1,C3";"C_1206";2;"1uF";;;
+7;"C2,C5";"C_1206";2;"10uF";;;
+8;"C4,C6,C9";"C_1206";3;"0.1uF";;;
+9;"C7,C8";"C_1206";2;"100nF";;;
+10;"D1";"D_1206";1;"1N5819";;;
+11;"R1,R3";"R_1206";2;"10k";;;
+12;"R2";"R_1206";1;"3.3k";;;
+13;"R4,R5";"R_1206";2;"4.7k";;;
+14;"J1,J2,J3,J4";"Pin_Header_Straight_1x04_Pitch2.54mm";4;"Conn_01x04";;;
+15;"J5,J6,J7,J8";"Pin_Header_Straight_1x06_Pitch2.54mm";4;"Conn_01x06";;;
+16;"JP1";"Pin_Header_Straight_1x02_Pitch2.54mm";1;"Jumper_NO_Small";;;
+17;"REF***";"KiCad-Logo2_12mm_SilkScreen";1;"KiCad-Logo2_12mm_SilkScreen";;;
