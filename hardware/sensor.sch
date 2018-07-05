@@ -263,11 +263,11 @@ NoConn ~ 5000 4100
 NoConn ~ 5100 4100
 NoConn ~ 5200 4100
 NoConn ~ 5300 4100
-Text GLabel 3850 3250 0    60   Input ~ 0
+Text GLabel 3850 3450 0    60   Input ~ 0
 spi1_clk
 Text GLabel 3350 3350 0    60   Input ~ 0
 spi1_mosi
-Text GLabel 3850 3450 0    60   Input ~ 0
+Text GLabel 3850 3250 0    60   Input ~ 0
 spi1_miso
 Text GLabel 3350 2950 0    60   Input ~ 0
 spi1_ssa
@@ -1141,4 +1141,5 @@ Wire Wire Line
 Connection ~ 1400 6850
 Wire Notes Line
 	4200 6100 4200 5150
+Connection ~ 1400 7200
 $EndSCHEMATC
