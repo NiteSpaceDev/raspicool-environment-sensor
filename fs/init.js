@@ -11,20 +11,25 @@ load('api_adc.js');
 // Who are we
 let sensorname = Cfg.get('sensor.name');
 
-// Turn on BMP / BME 280 sensor
-let sensor = BME280.createSPI();
-
-// Battery on pin 35
-let battery = 32;
+// Battery on pin 34
+let battery = 34;
 ADC.enable(battery);
 
-//let OurADC = {
-//readv: ffi('int mgos_adc_read_voltage(int)'), };
+print("Initializing");
+
+let OurADC = {
+readv: ffi('int mgos_adc_read_voltage(int)'), };
 
 // On the ESP32 dev board we are using, GPIO pin 16 is connected to the OLED
 //  RST pin.   We pull this pin high to power the OLED
 // TODO - Make this a config element
-GPIO.set_pull(16, GPIO.PULL_UP);
+//GPIO.set_mode(18, GPIO.MODE_OUTPUT)
+//GPIO.write(18, 1);
+//GPIO.set_mode(16, GPIO.MODE_OUTPUT)
+//GPIO.write(16, 1);
+
+// Turn on BMP / BME 280 sensor
+let sensor = BME280.createI2C(118);
 
 let oled = SSD1306.get_oled();
 oled.refresh();
@@ -35,7 +40,7 @@ Timer.set(15000, true, function() {
 		let reading={
 			"sensor": sensorname,
 			"vadc": ADC.read(battery),
-	//		"vadcv": OurADC.readv(battery),
+			"vadcv": OurADC.readv(battery),
 			"pressure": SensorUtils.atmospheresHg(sensor.readPress()),
 			"temp": sensor.readTemp(),
 			"humidity": Math.round(sensor.readHumid())
@@ -44,7 +49,9 @@ Timer.set(15000, true, function() {
 
 		// Get battery voltage - 6800 / 2200 divider, adc ref 1.1
 		//
-		reading.voltage = (reading.vadc/4095)*1.1*(6800/2200);
+		//reading.voltage = (reading.vadc/4095)*1.1*(10000/3300);
+		//reading.voltage = (reading.vadc/4095)*2*3.3*1.1;
+		reading.voltage = ((reading.vadcv/1000)*(10000+3300))/3300;
 
 		// Update the OLED Display
 		oled.clearDisplay();
